@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-scroll-behavior="smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agrata Amatya — CS Undergraduate · AI/ML · Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Agrata Amatya — Computer Science student at Herald College Kathmandu, AI & Machine Learning enthusiast, Full Stack developer, and aspiring Software & QA Engineer." />
+  <meta property="og:title" content="Agrata Amatya — Developer Portfolio" />
+  <meta property="og:description" content="CS Undergraduate | AI & ML Enthusiast | Full Stack Developer | Aspiring QA Engineer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════ SPLASH ══════════ -->
+  <section class="splash" id="splash" aria-label="Opening introduction">
+    <button class="splash-skip" type="button" id="splashSkip">Skip intro</button>
+    <div class="splash-inner">
+      <div class="splash-line">Developer &amp; Engineer</div>
+      <div class="splash-name">
+        <span>Agrata</span> <span><em>Amatya</em></span>
+      </div>
+      <p class="splash-sub">CS Undergraduate turning ideas into reliable software, ML pipelines, and tested applications.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section id="top" class="hero">
+
+    <!-- Navbar -->
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="nav-logo" href="#top">Agrata <em>Amatya</em></a>
+        <nav class="nav-links" id="navLinks">
+          <a href="#work">Projects</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-tools">
+          <button class="nav-theme" id="themeToggle" type="button" aria-label="Switch theme">
+            <i class="fa-solid fa-sun" id="themeIcon"></i>
+            <span id="themeLabel">Light</span>
+          </button>
+          <button class="pill" id="cvBtn">
+            <i class="fa-solid fa-download"></i> Resume
+          </button>
+          <a class="pill pill--solid" href="https://github.com" target="_blank" rel="noopener">
+            GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+        <button class="nav-burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+        <nav id="mobileMenu" class="mobile-menu">
+          <a href="#work">Projects</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Content -->
+    <div class="shell">
+      <div class="hero-copy">
+        <div class="hero-status">
+          <span class="dot"></span>
+          Open to Software &amp; QA Engineering Roles · Kathmandu, Nepal
+        </div>
+        <h1 class="hero-h1">
+          I'm Agrata Amatya, a <span class="hero-accent">CS Undergraduate</span> building reliable software &amp; ML solutions.
+        </h1>
+        <p class="hero-lede">
+          Pursuing BSc (Hons) Computer Science at <strong>Herald College Kathmandu</strong> (University of Wolverhampton).
+          Passionate about AI/ML, full-stack development, software testing, and IT infrastructure.
+        </p>
+        <div class="hero-actions">
+          <a class="pill pill--solid" href="#work">See my projects</a>
+          <a class="pill" href="#contact">Get in touch</a>
+        </div>
+        <div class="hero-tags" aria-label="Specialisation tags">
+          <span>AI &amp; Machine Learning</span>
+          <span>Full Stack Development</span>
+          <span>Software Testing &amp; QA</span>
+          <span>IT Infrastructure</span>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <div class="hero-photo">
+          <img src="assets/agrata_headshot.jpg" alt="Agrata Amatya" />
+          <div class="photo-links">
+            <a href="mailto:amatyaagrata@gmail.com">Email</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proof Rail -->
+    <div class="proof-rail" aria-label="Key metrics">
+      <article class="proof-card">
+        <strong><em>5</em>+</strong>
+        <span>core technical projects spanning web, AI/ML, and desktop</span>
+      </article>
+      <article class="proof-card">
+        <strong><em>7</em>+</strong>
+        <span>programming languages &amp; technology stacks</span>
+      </article>
+      <article class="proof-card">
+        <strong>IT&nbsp;Intern</strong>
+        <span>enterprise support at NECO Insurance Ltd.</span>
+      </article>
+      <article class="proof-card">
+        <strong>NEPSE</strong>
+        <span>secondary market analysis, portfolio monitoring &amp; risk awareness</span>
+      </article>
+    </div>
+
+    <!-- Strip -->
+    <section class="strip" aria-label="Built with">
+      <div class="strip-inner">
+        <span class="strip-label">Core technologies used across projects</span>
+        <div class="strip-item"><strong>Python</strong><span>AI &amp; ML pipelines</span></div>
+        <div class="strip-item"><strong>PHP / JS</strong><span>Full stack web apps</span></div>
+        <div class="strip-item"><strong>Java</strong><span>Desktop &amp; OOP</span></div>
+        <div class="strip-item"><strong>MySQL</strong><span>Database systems</span></div>
+        <div class="strip-item"><strong>React</strong><span>Frontend framework</span></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ══════════ WORK / PROJECTS ══════════ -->
+  <section id="work" class="v-section">
+    <div class="section-head">
+      <p>Selected Projects</p>
+      <h2>Projects that show technical depth, not just polished screens.</h2>
+      <span>Five engineering stories grounded in real code, real data, and real problem-solving.</span>
+    </div>
+
+    <div class="work-list">
+
+      <!-- 01 GoGodam -->
+      <article class="work-item">
+        <div class="work-visual">
+          <span class="work-idx">01</span>
+          <div class="work-img-placeholder">
+            <i class="fa-solid fa-boxes-stacked"></i>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-kicker">GoGodam · Project Manager &amp; Lead Developer · 2024</div>
+          <h3>Enterprise inventory &amp; logistics management with role-based access control.</h3>
+          <p>Full-stack system for warehouse operations — real-time stock tracking, order dispatch lifecycle, and multi-tier authentication for Admin, Manager, and Staff roles.</p>
+          <div class="work-metrics" aria-label="GoGodam proof points">
+            <span><strong>Role-based</strong> auth</span>
+            <span><strong>MySQL</strong> architecture</span>
+            <span><strong>Agile</strong> sprints</span>
+          </div>
+          <button class="v-link" data-modal="gogodam">View project details <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+        </div>
+      </article>
+
+      <!-- 02 Weather App -->
+      <article class="work-item">
+        <div class="work-visual">
+          <span class="work-idx">02</span>
+          <div class="work-img-placeholder">
+            <i class="fa-solid fa-cloud-sun-rain"></i>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-kicker">Weather App · Full Stack Developer · 2024</div>
+          <h3>Dynamic weather dashboard with OpenWeather REST API integration.</h3>
+          <p>Location search, multi-day forecasting, user authentication, preference persistence, and historical query logging with a PHP/MySQL backend.</p>
+          <div class="work-metrics">
+            <span><strong>REST API</strong> integration</span>
+            <span><strong>Auth</strong> &amp; sessions</span>
+            <span><strong>History</strong> logging</span>
+          </div>
+          <button class="v-link" data-modal="weather">View project details <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+        </div>
+      </article>
+
+      <!-- 03 ML Classification -->
+      <article class="work-item">
+        <div class="work-visual">
+          <span class="work-idx">03</span>
+          <div class="work-img-placeholder">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-kicker">ML Classification · AI / ML Engineer · 2024</div>
+          <h3>End-to-end classification pipeline with hyperparameter optimisation.</h3>
+          <p>Data cleaning, automated feature selection, GridSearchCV tuning, and multi-model benchmarking across Logistic Regression, Decision Trees, Random Forest, and SVM.</p>
+          <div class="work-metrics">
+            <span><strong>Scikit-learn</strong> pipeline</span>
+            <span><strong>GridSearchCV</strong> tuning</span>
+            <span><strong>4</strong> models benchmarked</span>
+          </div>
+          <button class="v-link" data-modal="mlclass">View project details <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+        </div>
+      </article>
+
+      <!-- 04 ML Regression -->
+      <article class="work-item">
+        <div class="work-visual">
+          <span class="work-idx">04</span>
+          <div class="work-img-placeholder">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-kicker">ML Regression · ML Analyst · 2024</div>
+          <h3>Predictive regression modelling with feature engineering &amp; residual diagnostics.</h3>
+          <p>Supervised models trained on real-world datasets — EDA, correlation analysis, Linear/Ridge/Lasso regressors, RMSE &amp; R² evaluation.</p>
+          <div class="work-metrics">
+            <span><strong>EDA</strong> &amp; feature eng.</span>
+            <span><strong>Cross-val</strong> scoring</span>
+            <span><strong>RMSE/R²</strong> metrics</span>
+          </div>
+          <button class="v-link" data-modal="mlreg">View project details <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+        </div>
+      </article>
+
+      <!-- 05 Java Swing -->
+      <article class="work-item">
+        <div class="work-visual">
+          <span class="work-idx">05</span>
+          <div class="work-img-placeholder">
+            <i class="fa-brands fa-java"></i>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-kicker">Java Swing Suite · Desktop Developer · 2024</div>
+          <h3>OOP-driven desktop application suite with JDBC persistence.</h3>
+          <p>Competition Management System, User Authentication &amp; Registration, and Scientific Calculator — all built with Swing GUI and strict OOP design patterns.</p>
+          <div class="work-metrics">
+            <span><strong>OOP</strong> patterns</span>
+            <span><strong>Swing</strong> GUI</span>
+            <span><strong>JDBC</strong> database layer</span>
+          </div>
+          <button class="v-link" data-modal="java">View project details <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══════════ EXPERIENCE ══════════ -->
+  <section id="experience" class="v-section v-soft">
+    <div class="section-head">
+      <p>Experience &amp; Education</p>
+      <h2>Resume timeline.</h2>
+      <span>Roles, institutions, dates, and the scope I can discuss in an interview.</span>
+    </div>
+
+    <div class="exp-list">
+      <article class="exp-item">
+        <div><h3>IT Support Intern</h3><p class="exp-company">NECO Insurance Ltd.</p></div>
+        <div class="exp-meta">Recent Internship</div>
+        <p class="exp-copy">Provided front-line technical support — diagnosing software/hardware issues, maintaining OS configurations, managing user permissions, network troubleshooting, and verifying software stability after system updates. Collaborated with senior IT administrators to ensure enterprise reliability.</p>
+      </article>
+
+      <article class="exp-item">
+        <div><h3>BSc (Hons) Computer Science</h3><p class="exp-company">Herald College Kathmandu · University of Wolverhampton</p></div>
+        <div class="exp-meta">2024 – Present</div>
+        <p class="exp-copy">Core coursework in Artificial Intelligence, Machine Learning, Full Stack Development, Database Systems, Object-Oriented Programming, Software Engineering, and Data Structures &amp; Algorithms.</p>
+      </article>
+
+      <article class="exp-item">
+        <div><h3>Higher Secondary (+2 Science)</h3><p class="exp-company">Hetauda School of Management &amp; Social Science</p></div>
+        <div class="exp-meta">2021 – 2023</div>
+        <p class="exp-copy">Biology &amp; Science stream education.</p>
+      </article>
+
+      <article class="exp-item">
+        <div><h3>SEE (Secondary Education Examination)</h3><p class="exp-company">Kadambari Academy</p></div>
+        <div class="exp-meta">Completed 2021</div>
+      </article>
+    </div>
+
+    <div class="resume-callout">
+      <button class="pill pill--solid" id="cvBtn2"><i class="fa-solid fa-download"></i> Download resume</button>
+      <a class="pill" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </div>
+  </section>
+
+  <!-- ══════════ SKILLS ══════════ -->
+  <section id="skills" class="v-section">
+    <div class="section-head">
+      <p>Technical Skills</p>
+      <h2>What I work with.</h2>
+      <span>Languages, frameworks, tools, and testing methodologies I use day to day.</span>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3><i class="fa-solid fa-code"></i> Programming Languages</h3>
+        <div class="skill-chips">
+          <span class="chip-hi">Python</span><span class="chip-hi">Java</span><span class="chip-hi">JavaScript</span>
+          <span>TypeScript</span><span>SQL</span><span>C#</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><i class="fa-solid fa-laptop-code"></i> Web Development</h3>
+        <div class="skill-chips">
+          <span class="chip-hi">HTML5</span><span class="chip-hi">CSS3</span><span class="chip-hi">React</span>
+          <span>Next.js</span><span>MERN Stack</span><span>PHP</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><i class="fa-solid fa-brain"></i> AI &amp; Machine Learning</h3>
+        <div class="skill-chips">
+          <span class="chip-hi">Pandas</span><span class="chip-hi">NumPy</span><span class="chip-hi">Scikit-learn</span>
+          <span>TensorFlow</span><span>Data Cleaning</span><span>Feature Engineering</span>
+          <span>Classification</span><span>Regression</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><i class="fa-solid fa-database"></i> Databases &amp; Infrastructure</h3>
+        <div class="skill-chips">
+          <span class="chip-hi">MySQL</span><span class="chip-hi">PostgreSQL</span>
+          <span>REST APIs</span><span>AWS</span><span>Docker</span><span>Apache / XAMPP</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><i class="fa-solid fa-vial"></i> Software Testing &amp; QA</h3>
+        <div class="skill-chips">
+          <span class="chip-hi">STLC &amp; SDLC</span><span class="chip-hi">Functional Testing</span><span class="chip-hi">Regression Testing</span>
+          <span>Smoke Testing</span><span>API Testing (Postman)</span><span>Bug Reporting</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Practices</h3>
+        <div class="skill-chips">
+          <span class="chip-hi">Git</span><span class="chip-hi">GitHub</span>
+          <span>VS Code</span><span>Agile / Scrum</span><span>OOP Principles</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ HOW I WORK ══════════ -->
+  <section class="v-section v-soft">
+    <div class="section-head">
+      <p>How I work</p>
+      <h2>Quality is a habit, not a checklist.</h2>
+      <span>An engineering style shaped by testing, data, and building things people can rely on.</span>
+    </div>
+
+    <div class="mini-grid">
+      <article class="mini-card">
+        <h3>Evidence before opinions</h3>
+        <p>Research the data, understand the edge cases, then write the code. I prefer decisions I can defend with metrics.</p>
+      </article>
+      <article class="mini-card">
+        <h3>Test early, test often</h3>
+        <p>Whether it's unit tests, Postman API checks, or manual QA — I validate at every stage, not just before deployment.</p>
+      </article>
+      <article class="mini-card">
+        <h3>Clean code is kind code</h3>
+        <p>I write code that the next developer can read. OOP principles, meaningful names, and documentation are non-negotiable.</p>
+      </article>
+      <article class="mini-card">
+        <h3>Ship the working path</h3>
+        <p>I choose the simplest architecture that solves the real problem, then iterate. No over-engineering, no gold-plating.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══════════ ABOUT ══════════ -->
+  <section id="about" class="v-section">
+    <div class="section-head">
+      <p>About</p>
+      <h2>The person behind the code.</h2>
+      <span>Short, human context after the work has already led.</span>
+    </div>
+
+    <div class="about-layout">
+      <div class="about-photo">
+        <img src="assets/agrata_headshot.jpg" alt="Agrata Amatya" />
+      </div>
+      <div class="about-copy">
+        <p class="about-kicker">About</p>
+        <h3>I am good at problem-solving, structured thinking, testing, and shipping reliable software.</h3>
+        <p class="about-subhead">I notice where systems can break, then build the logic that prevents it.</p>
+        <p>I'm a Computer Science student who approaches engineering with curiosity and rigour. My strongest work sits where complex data meets clean architecture — whether that's an ML pipeline classifying real-world datasets, a full-stack web app handling live API data, or an IT system keeping an insurance company running.</p>
+        <p>Outside academics, I actively follow the <strong>Nepal Stock Exchange (NEPSE)</strong> — analysing market trends, monitoring portfolios, and making investment decisions with practical risk awareness.</p>
+        <ul>
+          <li>Fluent in <strong>English, Nepali &amp; Hindi</strong>.</li>
+          <li>Strong analytical thinking, attention to detail, and adaptability.</li>
+          <li>Proven teamwork &amp; leadership as project manager and IT intern.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="about-interests">
+      <article class="interest-card">
+        <div class="interest-media"><i class="fa-solid fa-chart-candlestick"></i></div>
+        <div class="interest-text">
+          <h3>NEPSE &amp; FinTech</h3>
+          <p>Secondary market analysis, equity research, portfolio monitoring, and risk management.</p>
+        </div>
+      </article>
+      <article class="interest-card">
+        <div class="interest-media"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="interest-text">
+          <h3>Building Things</h3>
+          <p>From inventory systems to weather dashboards — I enjoy turning ideas into working software.</p>
+        </div>
+      </article>
+      <article class="interest-card">
+        <div class="interest-media"><i class="fa-solid fa-robot"></i></div>
+        <div class="interest-text">
+          <h3>AI / ML</h3>
+          <p>Exploring how machine learning can solve real classification and prediction problems.</p>
+        </div>
+      </article>
+      <article class="interest-card">
+        <div class="interest-media"><i class="fa-solid fa-vial"></i></div>
+        <div class="interest-text">
+          <h3>Quality Assurance</h3>
+          <p>STLC, SDLC, API testing with Postman, regression testing, and bug hunting.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <section id="contact" class="v-section v-contact">
+    <div class="section-head">
+      <p>Contact</p>
+      <h2>Have a project, role, or collaboration in mind? Let's talk.</h2>
+      <span>I reply fastest when the context is specific — role, project, or problem.</span>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <div class="contact-links">
+          <a class="pill pill--solid" href="mailto:amatyaagrata@gmail.com">
+            <i class="fa-solid fa-envelope"></i> amatyaagrata@gmail.com
+          </a>
+          <a class="pill" href="tel:+9779815290192"><i class="fa-solid fa-phone"></i> +977 9815290192</a>
+          <a class="pill" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="pill" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+          <button class="pill" id="cvBtn3"><i class="fa-solid fa-download"></i> Resume</button>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <label><span>Name</span><input autocomplete="name" required name="name" /></label>
+        <label><span>Email</span><input type="email" autocomplete="email" required name="email" /></label>
+        <label><span>Subject</span><input name="subject" /></label>
+        <label class="wide"><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+        <button type="submit">
+          <i class="fa-solid fa-paper-plane"></i> Send message
+        </button>
+      </form>
+    </div>
+
+    <footer class="v-footer">
+      <span>&copy; 2026 Agrata Amatya · CS &amp; AI Engineer</span>
+      <span>
+        <button class="pill" id="cvBtn4"><i class="fa-solid fa-download"></i> Resume</button>
+        ·
+        <a href="mailto:amatyaagrata@gmail.com">Email</a>
+        ·
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        ·
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </footer>
+  </section>
+
+  <!-- ══════════ MODAL – PROJECT ══════════ -->
+  <div class="modal" id="projectModal" aria-hidden="true">
+    <div class="modal-bg" data-close></div>
+    <div class="modal-panel">
+      <button class="modal-x" data-close aria-label="Close">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ══════════ MODAL – CV ══════════ -->
+  <div class="modal" id="cvModal" aria-hidden="true">
+    <div class="modal-bg" data-close></div>
+    <div class="modal-panel modal-panel--cv">
+      <div class="cv-bar">
+        <h2><i class="fa-solid fa-file-lines"></i> Curriculum Vitae</h2>
+        <div class="cv-bar-actions">
+          <button class="pill pill--solid pill--sm" id="printCv"><i class="fa-solid fa-print"></i> Print / PDF</button>
+          <button class="modal-x" data-close aria-label="Close">&times;</button>
+        </div>
+      </div>
+      <div class="cv-sheet" id="cvSheet">
+        <h1>AGRATA AMATYA</h1>
+        <p class="cv-tagline">Computer Science Undergraduate · AI &amp; ML Enthusiast · Full Stack Developer</p>
+        <div class="cv-contact">
+          <span><i class="fa-solid fa-envelope"></i> amatyaagrata@gmail.com</span>
+          <span><i class="fa-solid fa-phone"></i> +977 9815290192</span>
+          <span><i class="fa-solid fa-location-dot"></i> Kathmandu, Nepal</span>
+        </div>
+        <hr />
+        <section><h3>PROFILE</h3><p>CS student at Herald College Kathmandu (University of Wolverhampton) passionate about building reliable software, ML applications, and IT systems. Experienced in full-stack web development, Python data analytics, software quality testing, and IT operations.</p></section>
+        <section><h3>EDUCATION</h3>
+          <p><strong>BSc (Hons) Computer Science</strong> — Herald College Kathmandu / Univ. of Wolverhampton · 2024 – Present</p>
+          <p><strong>+2 Science (Biology)</strong> — Hetauda School of Management &amp; Social Science · 2021 – 2023</p>
+          <p><strong>SEE</strong> — Kadambari Academy · 2021</p>
+        </section>
+        <section><h3>EXPERIENCE</h3>
+          <p><strong>IT Support Intern</strong> — NECO Insurance Ltd.</p>
+          <ul><li>Diagnosed software/hardware issues; maintained Windows enterprise systems.</li><li>Managed user accounts, permissions, network troubleshooting, and system updates.</li><li>Verified software stability post-installation; collaborated with senior IT admins.</li></ul>
+        </section>
+        <section><h3>PROJECTS</h3>
+          <ul><li><strong>GoGodam Inventory System</strong> — PM &amp; Lead Dev · PHP, MySQL, Role Auth</li><li><strong>Weather Application</strong> — Full-Stack · PHP, JS, MySQL, OpenWeather API</li><li><strong>ML Classification &amp; Regression</strong> — Python, Pandas, Scikit-learn pipelines</li><li><strong>Java Swing Suite</strong> — Calculator, Login, Competition Manager GUI</li></ul>
+        </section>
+        <section><h3>SKILLS</h3>
+          <p><strong>Languages:</strong> Python, Java, JavaScript, TypeScript, SQL, PHP, C#</p>
+          <p><strong>AI/ML:</strong> Scikit-learn, Pandas, NumPy, TensorFlow, Classification, Regression</p>
+          <p><strong>Web:</strong> React, Next.js, MERN, HTML5, CSS3</p>
+          <p><strong>QA:</strong> STLC, SDLC, Functional/Regression Testing, Postman, Bug Reporting</p>
+          <p><strong>Tools:</strong> Git, GitHub, Docker, AWS, VS Code, Agile / Scrum</p>
+        </section>
+        <section><h3>LANGUAGES</h3><p>English · Nepali · Hindi</p></section>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
