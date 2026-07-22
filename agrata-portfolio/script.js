@@ -1,27 +1,31 @@
-// Agrata Amatya - Portfolio Scripts (Savita Singh Inspired)
+// Agrata Amatya - Portfolio Interactive Scripts (Girly Aesthetic)
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Splash Screen
+  // Splash Screen Dismissal
   const splash = document.getElementById('splash');
-  const splashSkip = document.getElementById('splashSkip');
+  const skipSplash = document.getElementById('skipSplash');
 
-  function dismissSplash() {
-    if (splash) splash.classList.add('hide');
+  if (skipSplash && splash) {
+    skipSplash.addEventListener('click', () => {
+      splash.classList.add('fade-out');
+    });
+
+    setTimeout(() => {
+      if (splash && !splash.classList.contains('fade-out')) {
+        splash.classList.add('fade-out');
+      }
+    }, 2500);
   }
 
-  if (splashSkip) splashSkip.addEventListener('click', dismissSplash);
-  setTimeout(dismissSplash, 2800);
-
-  // Theme Toggle Switcher
-  const html = document.documentElement;
+  // Theme Switcher
   const themeToggle = document.getElementById('themeToggle');
   const themeIcon = document.getElementById('themeIcon');
-  const themeLabel = document.getElementById('themeLabel');
+  const html = document.documentElement;
 
   const savedTheme = localStorage.getItem('agrata_theme') || 'dark';
   html.setAttribute('data-theme', savedTheme);
-  updateThemeUI(savedTheme);
+  updateThemeIcon(savedTheme);
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
@@ -29,74 +33,99 @@ document.addEventListener('DOMContentLoaded', () => {
       const next = current === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('agrata_theme', next);
-      updateThemeUI(next);
+      updateThemeIcon(next);
     });
   }
 
-  function updateThemeUI(t) {
-    if (!themeIcon || !themeLabel) return;
+  function updateThemeIcon(t) {
+    if (!themeIcon) return;
     if (t === 'light') {
       themeIcon.className = 'fa-solid fa-moon';
-      themeLabel.textContent = 'Dark';
     } else {
       themeIcon.className = 'fa-solid fa-sun';
-      themeLabel.textContent = 'Light';
     }
   }
 
-  // Mobile Menu Burger
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
+  // Mobile Menu Toggle
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const navMenu = document.getElementById('navMenu');
 
-  if (burger && mobileMenu) {
-    burger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-      });
+  if (mobileMenuToggle && navMenu) {
+    mobileMenuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      if (navMenu.classList.contains('active')) {
+        navMenu.style.display = 'flex';
+        navMenu.style.flexDirection = 'column';
+        navMenu.style.position = 'absolute';
+        navMenu.style.top = '70px';
+        navMenu.style.left = '0';
+        navMenu.style.width = '100%';
+        navMenu.style.background = 'var(--bg-secondary)';
+        navMenu.style.padding = '20px';
+        navMenu.style.borderBottom = '1px solid var(--border-color)';
+      } else {
+        navMenu.style.display = '';
+      }
     });
   }
 
-  // Project Modals Data
+  // Project Category Filters
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Project Details Modal Data
   const projectsData = {
     gogodam: {
       title: "GoGodam Inventory & Logistics Management System",
       role: "Project Manager & Lead Developer",
       tech: ["PHP", "JavaScript", "MySQL", "Bootstrap", "HTML5", "CSS3"],
-      overview: "GoGodam is a comprehensive enterprise inventory platform tailored for logistics tracking and warehouse operations. As Lead Developer and PM, I architected the database schema, designed role-based access control (Admin, Warehouse Manager, Staff), and led team sprint planning.",
+      overview: "GoGodam is a comprehensive enterprise inventory platform built for warehouse logistics. As Lead Developer and PM, I architected the database schema, designed role-based access control (Admin, Warehouse Manager, Staff), and led team sprint planning.",
       features: [
         "Multi-tier role-based authentication and privilege scoping.",
-        "Real-time inventory stock level tracking with low-stock threshold alerts.",
-        "Order dispatch lifecycle tracking — from receipt to delivery confirmation.",
-        "Optimised MySQL relational schema built for multi-user concurrency.",
-        "Agile task coordination and milestone management."
+        "Real-time inventory stock tracking with low-stock alerts.",
+        "Order dispatch lifecycle management — from receipt to delivery.",
+        "Optimised MySQL schema built for multi-user concurrency."
       ]
     },
     weather: {
-      title: "Full-Stack Weather Application with OpenWeather API",
+      title: "Full-Stack Weather Application (REST API)",
       role: "Full Stack Developer",
       tech: ["PHP", "JavaScript", "MySQL", "OpenWeather REST API", "CSS3"],
-      overview: "Interactive weather dashboard integrating the OpenWeather REST API with a PHP/MySQL backend. Features location search, automatic geolocation, multi-day forecasting, user query history, and saved preferences.",
+      overview: "Interactive weather dashboard integrating OpenWeather REST API with a PHP/MySQL backend. Features location search, automatic geolocation, multi-day forecasts, user preferences, and search history logging.",
       features: [
-        "RESTful API integration with caching for high performance.",
+        "RESTful API integration with intelligent response caching.",
         "User registration, authentication, and saved location preferences.",
-        "Historical weather search query log stored in a MySQL database.",
-        "Dynamic weather cards rendering temperature, humidity, and wind metrics."
+        "Historical weather query search log saved in a MySQL database.",
+        "Dynamic UI card rendering based on atmospheric metrics."
       ]
     },
     mlclass: {
-      title: "Machine Learning Classification Pipeline",
+      title: "Machine Learning Classification Model Suite",
       role: "AI / ML Engineer",
       tech: ["Python", "Pandas", "NumPy", "Scikit-learn"],
-      overview: "End-to-end classification pipeline built for structured tabular data. Performs data cleaning, automated feature selection, hyperparameter tuning via GridSearchCV, and benchmark evaluation.",
+      overview: "End-to-end Machine Learning classification framework for structured tabular data. Features automated data cleaning, feature engineering, hyperparameter tuning via GridSearchCV, and benchmark evaluation.",
       features: [
         "Exploratory Data Analysis and statistical profiling.",
         "Missing value imputation and categorical encoding.",
-        "Algorithms benchmarked: Logistic Regression, Decision Tree, Random Forest, SVM.",
-        "Confusion matrix and ROC/AUC performance metric evaluation."
+        "Algorithms tested: Logistic Regression, Decision Tree, Random Forest, SVM.",
+        "Confusion matrix and ROC/AUC performance evaluation."
       ]
     },
     mlreg: {
@@ -105,9 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
       tech: ["Python", "Pandas", "NumPy", "Scikit-learn"],
       overview: "Supervised machine learning regression models engineered on real-world datasets to predict continuous target variables.",
       features: [
-        "Feature engineering and multivariate correlation analysis.",
+        "Multivariate feature correlation analysis.",
         "Linear Regression, Ridge/Lasso, and Random Forest Regressors.",
-        "Model evaluation via RMSE, MAE, and R² scores."
+        "Model validation using RMSE, MAE, and R² scores."
       ]
     },
     java: {
@@ -116,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tech: ["Java", "Java Swing", "JDBC", "OOP Principles"],
       overview: "Suite of desktop GUI tools developed adhering strictly to Object-Oriented Programming (OOP) principles.",
       features: [
-        "Competition Management System for scoring and competitor management.",
+        "Competition Management System for competitor registration and scoring.",
         "Scientific Calculator and GUI User Authentication System.",
         "JDBC database layer for persistent record management."
       ]
@@ -125,72 +154,74 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Modals Logic
   const projectModal = document.getElementById('projectModal');
-  const modalContent = document.getElementById('modalContent');
-  const cvModal = document.getElementById('cvModal');
-  const printCv = document.getElementById('printCv');
+  const modalBody = document.getElementById('modalBody');
+  const modalClose = document.getElementById('modalClose');
+  const modalBg = document.getElementById('modalBg');
 
-  // Open Project Modal
-  document.querySelectorAll('[data-modal]').forEach(btn => {
+  document.querySelectorAll('.modal-trigger').forEach(btn => {
     btn.addEventListener('click', () => {
-      const key = btn.getAttribute('data-modal');
+      const key = btn.getAttribute('data-project');
       const data = projectsData[key];
-      if (!data || !modalContent) return;
+      if (!data || !modalBody) return;
 
-      modalContent.innerHTML = `
-        <div style="font-size:0.85rem; color:var(--accent-pink); font-weight:600; margin-bottom:6px;"><i class="fa-solid fa-code"></i> ${data.role}</div>
-        <h2 style="font-size:1.8rem; margin-bottom:16px;">${data.title}</h2>
+      modalBody.innerHTML = `
+        <div style="font-size:0.85rem; color:var(--rose-pink); font-weight:700; margin-bottom:6px;"><i class="fa-solid fa-sparkles"></i> ${data.role}</div>
+        <h2 style="font-size:1.7rem; margin-bottom:16px;">${data.title}</h2>
         <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;">
-          ${data.tech.map(t => `<span style="padding:4px 10px; border-radius:4px; background:rgba(255,255,255,0.05); border:1px solid var(--border-color); font-size:0.78rem; font-family:var(--font-mono);">${t}</span>`).join('')}
+          ${data.tech.map(t => `<span class="tag">${t}</span>`).join('')}
         </div>
-        <h3 style="font-size:1.1rem; color:var(--accent-pink); margin-bottom:8px;">Overview</h3>
+        <h3 style="font-size:1.1rem; color:var(--rose-pink); margin-bottom:8px;">Overview</h3>
         <p style="color:var(--text-secondary); margin-bottom:20px; font-size:0.95rem;">${data.overview}</p>
-        <h3 style="font-size:1.1rem; color:var(--accent-pink); margin-bottom:8px;">Key Technical Features</h3>
+        <h3 style="font-size:1.1rem; color:var(--rose-pink); margin-bottom:8px;">Key Technical Features</h3>
         <ul style="padding-left:20px; color:var(--text-secondary); margin-bottom:24px; font-size:0.92rem; list-style:disc;">
           ${data.features.map(f => `<li style="margin-bottom:6px;">${f}</li>`).join('')}
         </ul>
-        <a href="https://github.com" target="_blank" rel="noopener" class="pill pill--solid">
+        <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-girly btn-sm">
           <i class="fa-brands fa-github"></i> View GitHub Repository
         </a>
       `;
-      openModal(projectModal);
+      projectModal.classList.add('active');
     });
   });
 
-  // Open CV Modal Buttons
-  ['cvBtn', 'cvBtn2', 'cvBtn3', 'cvBtn4'].forEach(id => {
-    const b = document.getElementById(id);
-    if (b) b.addEventListener('click', () => openModal(cvModal));
-  });
+  if (modalClose && projectModal) {
+    modalClose.addEventListener('click', () => projectModal.classList.remove('active'));
+  }
+  if (modalBg && projectModal) {
+    modalBg.addEventListener('click', () => projectModal.classList.remove('active'));
+  }
 
-  // Print CV
+  // Resume / CV Modal Logic
+  const cvModal = document.getElementById('cvModal');
+  const cvBtn = document.getElementById('cvBtn');
+  const cvModalClose = document.getElementById('cvModalClose');
+  const cvModalBg = document.getElementById('cvModalBg');
+  const printCv = document.getElementById('printCv');
+
+  if (cvBtn && cvModal) {
+    cvBtn.addEventListener('click', () => cvModal.classList.add('active'));
+  }
+  if (cvModalClose && cvModal) {
+    cvModalClose.addEventListener('click', () => cvModal.classList.remove('active'));
+  }
+  if (cvModalBg && cvModal) {
+    cvModalBg.addEventListener('click', () => cvModal.classList.remove('active'));
+  }
   if (printCv) {
     printCv.addEventListener('click', () => window.print());
   }
 
-  function openModal(m) {
-    if (!m) return;
-    m.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal(m) {
-    if (!m) return;
-    m.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  // Close modals on click close button or backdrop
-  document.querySelectorAll('.modal').forEach(m => {
-    m.querySelectorAll('[data-close]').forEach(el => {
-      el.addEventListener('click', () => closeModal(m));
+  // Copy Email Clipboard
+  const copyEmail = document.getElementById('copyEmail');
+  if (copyEmail) {
+    copyEmail.addEventListener('click', () => {
+      navigator.clipboard.writeText('amatyaagrata@gmail.com').then(() => {
+        const orig = copyEmail.innerHTML;
+        copyEmail.innerHTML = '<i class="fa-solid fa-check" style="color:var(--mint)"></i> Copied!';
+        setTimeout(() => copyEmail.innerHTML = orig, 2000);
+      });
     });
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal.open').forEach(m => closeModal(m));
-    }
-  });
+  }
 
   // Contact Form Submission
   const contactForm = document.getElementById('contactForm');
@@ -203,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.disabled = true;
 
       setTimeout(() => {
-        alert('Thank you! Your message has been sent successfully. Agrata will get back to you shortly.');
+        alert('Thank you! Your message has been sent. Agrata will get back to you shortly 💖');
         contactForm.reset();
         btn.innerHTML = origText;
         btn.disabled = false;
